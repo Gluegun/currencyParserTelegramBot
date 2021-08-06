@@ -64,7 +64,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    @Scheduled(cron = "0 0 10 * * *")
+    @Scheduled(cron = "0 0 10 * * *", zone = "Europe/Moscow")
     public void sendDailyMessage() {
         String message = "Курс евро на сегодня " + parser.getCurrencyValue("Евро");
         SendMessage sendMessage = new SendMessage("373103052", message);
